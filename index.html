@@ -1,274 +1,138 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محرر الأكواد</title>
+  <!-- عنوان الصفحة -->
+  <title>محمود زريق قرآن</title>
 
-<style>
-*{
-    box-sizing:border-box;
-}
+  <!-- ربط ملف CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <meta http-equive="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-    margin:0;
-    font-family:Arial;
-    background:#0f0f0f;
-    color:#fff;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-}
-
-/* الهيدر */
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px;
-    background:#1f1f1f;
-    flex-shrink:0;
-}
-
-.menu-btn{
-    font-size:20px;
-    cursor:pointer;
-}
-
-/* القائمة */
-.menu{
-    position:fixed;
-    top:0;
-    right:-250px;
-    width:250px;
-    height:100%;
-    background:#222;
-    transition:.3s;
-    padding:10px;
-    z-index:999;
-}
-
-.menu.active{
-    right:0;
-}
-
-.menu button{
-    width:100%;
-    margin:5px 0;
-    padding:10px;
-    background:#333;
-    color:#fff;
-    border:none;
-}
-
-/* الحاوية */
-.container{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    height:100%;
-}
-
-/* المعاينة */
-.preview{
-    height:50%;
-    background:#fff;
-}
-
-/* iframe */
-iframe{
-    width:100%;
-    height:100%;
-    border:none;
-}
-
-/* الخط الفاصل */
-.resizer{
-    height:6px;
-    background:#00c2a8;
-    cursor:row-resize;
-}
-
-/* التبويبات */
-.tabs{
-    display:flex;
-    background:#1c1c1c;
-}
-
-.tab{
-    flex:1;
-    text-align:center;
-    padding:10px;
-    cursor:pointer;
-}
-
-.tab.active{
-    background:#00c2a8;
-    color:#000;
-}
-
-/* المحرر */
-.editor{
-    flex:1;
-}
-
-textarea{
-    width:100%;
-    height:100%;
-    background:#111;
-    color:#00ffcc;
-    border:none;
-    outline:none;
-    padding:10px;
-    font-family:monospace;
-    font-size:14px;
-}
-</style>
+  <!-- دعم اللغة العربية -->
+  <meta charset="UTF-8">
 </head>
 
 <body>
 
-<div class="header">
-    <div>محرر الأكواد</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
+  <!-- الحاوية الرئيسية -->
+  <div id="kk" style="text-align: center;">
+  
+        <!--العنوان-->
+    <br>
+    <marquee direction="right" id="address">🌹 بعض السور من القرآن الكريم 🌹</marquee>
 
-<div class="container">
+    <br><br>
 
-<!-- القائمة -->
-<div class="menu" id="menu">
-    <button onclick="toggleMenu()">⬅ رجوع</button>
-    <button onclick="clearAll()">🧹 تنظيف</button>
-    <button onclick="saveFile()">💾 حفظ</button>
-    <button onclick="document.getElementById('fileInput').click()">📂 استيراد</button>
-    <button onclick="changeFont()">🔠 تغيير الخط</button>
-</div>
+    <!-- صورة -->
+    <img id="image" src="image.png" alt="صورة" width="200">
 
-<input type="file" id="fileInput" style="display:none">
+    <br><br>
 
-<!-- المعاينة -->
-<div class="preview" id="preview">
-    <iframe id="output"></iframe>
-</div>
+    <!-- وصف -->
+    <p id="p" dir="rtl">
+      اقترب أكثر من القرآن الكريم.. واستمع لتلاوات تهز القلب وتبعث الراحة والطمأنينة 😌
+    </p>
 
-<!-- الخط الفاصل -->
-<div class="resizer" id="drag"></div>
+    <!-- ===================== -->
+    <!-- المقاطع الصوتية -->
+    <!-- ===================== -->
 
-<!-- التبويبات -->
-<div class="tabs">
-    <div class="tab active" onclick="switchTab('html')">HTML</div>
-    <div class="tab" onclick="switchTab('css')">CSS</div>
-    <div class="tab" onclick="switchTab('js')">JS</div>
-</div>
+    <!-- سورة الإسراء -->
+    <fieldset>
+      <legend>سورة الإسراء</legend>
+      <audio controls>
+        <source src="audio1.mp3" type="audio/mpeg">
+        متصفحك لا يدعم الصوت
+      </audio>
+    </fieldset>
 
-<!-- المحرر -->
-<div class="editor" id="editor">
-<textarea id="htmlCode"></textarea>
-<textarea id="cssCode" style="display:none;"></textarea>
-<textarea id="jsCode" style="display:none;"></textarea>
-</div>
+    <!-- سورة يس -->
+    <fieldset>
+      <legend>سورة لقمان</legend>
+      <audio controls>
+        <source src="audio2.mp3" type="audio/mpeg">
+      </audio>
+    </fieldset>
 
-</div>
+    <!-- سورة لقمان -->
+    <fieldset>
+      <legend>سورة ياسين</legend>
+      <audio controls>
+        <source src="audio3.mp3" type="audio/mpeg">
+      </audio>
+    </fieldset>
 
-<script>
-function toggleMenu(){
-    document.getElementById('menu').classList.toggle('active');
-}
+    <!-- سورة الرحمن -->
+    <fieldset>
+      <legend>سورة الواقعة</legend>
+      <audio controls>
+        <source src="audio4.mp3" type="audio/mpeg">
+      </audio>
+    </fieldset>
 
-function switchTab(tab){
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    event.target.classList.add('active');
+    <!-- سورة الواقعة -->
+    <fieldset>
+      <legend>سورة الملك</legend>
+      <audio controls>
+        <source src="audio5.mp3" type="audio/mpeg">
+      </audio>
+    </fieldset>
 
-    ['html','css','js'].forEach(t=>{
-        document.getElementById(t+'Code').style.display='none';
-    });
+    <!-- سورة الملك -->
+    <fieldset>
+      <legend>سورة الحاقة</legend>
+      <audio controls>
+        <source src="audio6.mp3" type="audio/mpeg">
+      </audio>
+    </fieldset>
 
-    document.getElementById(tab+'Code').style.display='block';
-}
+    <!-- سورة طه -->
+    <fieldset>
+      <legend>سورة الرحمن</legend>
+      <audio controls>
+        <source src="audio7.mp3" type="audio/mpeg">
+      </audio>
+    </fieldset>
 
-function update(){
-    let html = htmlCode.value;
-    let css = "<style>"+cssCode.value+"</style>";
-    let js = "<script>"+jsCode.value+"<\/script>";
 
-    let doc = output.contentWindow.document;
-    doc.open();
-    doc.write(html+css+js);
-    doc.close();
-}
+    <!-- اسم المطور -->
+    <h3 id="developer">Developer : محمود زريق</h3>
 
-document.querySelectorAll("textarea").forEach(el=>{
-    el.addEventListener("input", update);
-});
+  </div>
 
-update();
+  <!-- ===================== -->
+  <!-- نافذة منبثقة (Popup) -->
+  <!-- ===================== -->
 
-/* تنظيف */
-function clearAll(){
-    htmlCode.value="";
-    cssCode.value="";
-    jsCode.value="";
-    update();
-}
+  <div id="popupOverlay">
 
-/* حفظ */
-function saveFile(){
-    let blob = new Blob([htmlCode.value], {type:"text/html"});
-    let a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "code-editor.html";
-    a.click();
-}
+    <div id="popupBox">
 
-/* استيراد */
-fileInput.onchange = function(){
-    let file = this.files[0];
-    let reader = new FileReader();
-    reader.onload = function(e){
-        htmlCode.value = e.target.result;
-        update();
-    }
-    reader.readAsText(file);
-}
+      <h3 dir="rtl">تابعنا على 🥰:</h3>
 
-/* تغيير الخط */
-function changeFont(){
-    let size = prompt("ادخل حجم الخط:",14);
-    document.querySelectorAll("textarea").forEach(t=>{
-        t.style.fontSize = size+"px";
-    });
-}
+      <!-- روابط التواصل -->
+      <a href="https://www.facebook.com/share/1DkP76BLHA/" target="_blank" class="btn fb">
+        فيسبوك
+      </a>
 
-/* السحب الاحترافي */
-let drag = document.getElementById("drag");
-let preview = document.getElementById("preview");
-let container = document.querySelector(".container");
+      <a href="https://www.instagram.com/mahmoud.coder" target="_blank" class="btn ig">
+        انستقرام
+      </a>
 
-let isDragging = false;
+      <a href="https://youtube.com/channel/UCV5atoBZwAH5ehsEhK6YGCQ" target="_blank" class="btn yt">
+        يوتيوب
+      </a>
 
-drag.addEventListener("mousedown", ()=> isDragging = true);
-drag.addEventListener("touchstart", ()=> isDragging = true);
+      <!-- زر الإغلاق -->
+      <span class="close-btn" onclick="closePopup()">إغلاق</span>
 
-window.addEventListener("mouseup", ()=> isDragging = false);
-window.addEventListener("touchend", ()=> isDragging = false);
+    </div>
+  </div>
 
-window.addEventListener("mousemove", resize);
-window.addEventListener("touchmove", resize);
-
-function resize(e){
-    if(!isDragging) return;
-
-    let clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    let rect = container.getBoundingClientRect();
-
-    let offset = clientY - rect.top;
-    let percent = (offset / rect.height) * 100;
-
-    if(percent > 10 && percent < 90){
-        preview.style.height = percent + "%";
-    }
-}
-</script>
+  <!-- ربط JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
